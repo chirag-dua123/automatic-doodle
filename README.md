@@ -62,3 +62,15 @@ All figures and evaluation metrics will be generated and saved to `plots/`:
 - `plots/confusion_matrix.png`
 - `plots/roc_pr_curves.png`
 - `plots/top_sensors.png`
+
+## ☁️ Deploy on Streamlit Community Cloud
+
+1. Push this repository to GitHub.
+2. Go to [https://share.streamlit.io/](https://share.streamlit.io/) and sign in with GitHub.
+3. Click **Create app** and select:
+   - **Repository**: `chirag-dua123/automatic-doodle`
+   - **Branch**: your deployment branch (for example `main`)
+   - **Main file path**: `streamlit_app.py`
+4. Click **Deploy**.
+
+If the app is already deployed, use **Manage app → Reboot** after new commits.
