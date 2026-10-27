@@ -39,7 +39,19 @@ An end-to-end industrial Machine Learning pipeline for diagnosing semiconductor 
 
 ## 🚀 Quickstart
 
-Run the complete pipeline using the local Python environment:
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run as a Streamlit app:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Or run the complete pipeline as a CLI script:
 
 ```bash
 python main.py
