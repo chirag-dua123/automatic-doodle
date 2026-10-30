@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
+from sklearn.calibration import CalibratedClassifierCV
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, HistGradientBoostingClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import StratifiedKFold, cross_validate, GridSearchCV
@@ -19,8 +20,11 @@ def get_model_suite(random_state=42):
         "Logistic Regression (Balanced)": LogisticRegression(
             class_weight='balanced', max_iter=1000, random_state=random_state
         ),
-        "Support Vector Machine (RBF)": SVC(
-            kernel='rbf', class_weight='balanced', probability=True, random_state=random_state
+        "Support Vector Machine (RBF)": CalibratedClassifierCV(
+            estimator=SVC(
+                kernel='rbf', class_weight='balanced', random_state=random_state
+            ),
+            ensemble=False
         ),
         "Random Forest (Balanced)": RandomForestClassifier(
             n_estimators=150, class_weight='balanced', max_depth=10, random_state=random_state
